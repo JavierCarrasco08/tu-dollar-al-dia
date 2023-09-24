@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="font-inclusive-sans h-full w-full text-text">
   <head>
     <!-- !Meta etiquetas -->
     <meta charset="UTF-8" />
@@ -32,10 +32,66 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap"
       rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/dollar.svg"
+      type="image/svg+xml"
+      sizes="any" />
     <!-- ? Fin de las etiquetas de links -->
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="w-full h-full bg-background">
+    <div
+      id="capa"
+      class="fixed top-0 left-0 right-0 bottom-0 bg-gradient z-0"></div>
+    <div
+      id="app"
+      class="max-w-7xl ml-auto mr-auto overflow-x-hidden w-full h-full relative z-20 flex flex-col">
+      <header class="p-3 flex-grow-0">
+        <h1 class="text-2xl font-bold">Tu dollar al dia</h1>
+      </header>
+      <main class="flex-grow"></main>
+      <footer class="flex-grow-0 p-3">
+        <ul class="w-full flex gap-2 pr-2 items-center justify-end mb-2">
+          <li class="">
+            <a
+              href="https://github.com/javiercarrasco08"
+              class=""
+              target="_blank"
+              title="Github"
+              rel="noopener noreferrer">
+              <img
+                src="./src/assets/github.svg"
+                alt="Presionar aquí para ir a mi perfil de Github"
+                class="" />
+            </a>
+          </li>
+          <li class="">
+            <a
+              href="https://www.linkedin.com/in/javier-carrasco-39123727a/"
+              class=""
+              target="_blank"
+              title="LinkedIn"
+              rel="noopener noreferrer">
+              <img
+                src="./src/assets/linkedin.svg"
+                alt="Presionar aquí para ir a mi perfil de LinkedIn"
+                class="" />
+            </a>
+          </li>
+        </ul>
+        <p class="text-sm text-center font-semibold">
+          Todos los derechos de auto &copy;
+          <a
+            class="underline"
+            href="https://github.com/javiercarrasco08"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Github"
+            >Javier Carrasco</a
+          >
+        </p>
+      </footer>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
