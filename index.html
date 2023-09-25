@@ -8,7 +8,7 @@
     <meta name="copyright" content="Javier Carrasco" />
     <meta
       name="description"
-      content="Esta es una aplicación para saber el precio del dollar en tu moneda natal, o en otras monedas internacionales. También podrías hacer conversion entre otros monedas." />
+      content="Esta es una aplicación para saber el precio del dollar en tu moneda natal, o en otras monedas internacionales. Funciona para las monedas de America del sur." />
     <meta
       name="keywords"
       content="Dollar, monedas, conversion, cambios, tasas, bolivares, dinero" />
@@ -47,9 +47,54 @@
       id="app"
       class="max-w-7xl ml-auto mr-auto overflow-x-hidden w-full h-full relative z-20 flex flex-col">
       <header class="p-3 flex-grow-0">
-        <h1 class="text-2xl font-bold">Tu dollar al dia</h1>
+        <h1 class="text-3xl font-bold sm:text-5xl 3xl:text-5xl">
+          Tu dollar al dia
+        </h1>
       </header>
-      <main class="flex-grow"></main>
+      <main
+        class="flex-grow flex flex-col items-center justify-center gap-4 sm:gap-8">
+        <div
+          class="flex items-center justify-center w-28 h-28 bg-dollar rounded-full sm:w-36 sm:h-36 2xl:w-44 2xl:h-44 3xl:w-48 3xl:h-48">
+          <span class="text-7xl sm:text-8xl 2xl:text-9xl 3xl:text-[136px]"
+            >&dollar;</span
+          >
+        </div>
+        <form
+          class="flex flex-col items-center gap-4 sm:w-2/5 sm:gap-8 2xl:w-3/5">
+          <div class="flex justify-center items-end gap-3 sm:w-full">
+            <select
+              name="country"
+              class="bg-background border-text border-solid border-2 focus:border-blue transition-colors duration-500 outline-none cursor-pointer text-text rounded sm:px-3 2xl:py-1 2xl:text-xl 3xl:text-2xl"
+              required></select>
+            <label
+              for="from"
+              class="flex flex-col sm:w-3/4 2xl:text-xl 3xl:text-2xl">
+              Moneda a convertir
+              <input
+                type="text"
+                name="from"
+                id="from"
+                value="0"
+                class="bg-transparent border-b-2 border-b-text border-b-solid text-lg outline-none transition-colors duration-500 focus:border-b-blue 2xl:text-2xl 2xl:border-b-4 3xl:text-3xl"
+                required />
+            </label>
+          </div>
+          <input
+            type="submit"
+            value="Convertir"
+            class="font-semibold bg-blue px-5 py-2 rounded border-transparent border-2 transition-colors duration-500 border-solid focus:border-text outline-none cursor-pointer 2xl:text-xl 3xl:text-3xl" />
+          <label for="to" class="flex flex-col w-full 2xl:text-xl 3xl:text-2xl">
+            Moneda USD
+            <input
+              type="text"
+              name="to"
+              id="to"
+              class="bg-transparent border-b-2 border-b-text border-b-solid text-lg transition-colors duration-500 xl:hover:border-b-blue 2xl:text-2xl 2xl:border-b-4 3xl:text-3xl"
+              value="0"
+              disabled="disabled" />
+          </label>
+        </form>
+      </main>
       <footer class="flex-grow-0 p-3">
         <ul class="w-full flex gap-2 pr-2 items-center justify-end mb-2">
           <li class="">
@@ -62,7 +107,7 @@
               <img
                 src="./src/assets/github.svg"
                 alt="Presionar aquí para ir a mi perfil de Github"
-                class="" />
+                class="sm:w-10 sm:h-10 xl:hover:-translate-y-2 transition-transform duration-500 2xl:w-12 2xl:h-12 3xl:w-16 3xl:h-16" />
             </a>
           </li>
           <li class="">
@@ -75,20 +120,22 @@
               <img
                 src="./src/assets/linkedin.svg"
                 alt="Presionar aquí para ir a mi perfil de LinkedIn"
-                class="" />
+                class="sm:w-10 sm:h-10 xl:hover:-translate-y-2 transition-transform duration-500 2xl:w-12 2xl:h-12 3xl:w-16 3xl:h-16" />
             </a>
           </li>
         </ul>
-        <p class="text-sm text-center font-semibold">
-          Todos los derechos de auto &copy;
+        <p
+          class="text-sm text-center font-semibold sm:text-xl 2xl:text-2xl 3xl:text-3xl">
+          Creado por
           <a
-            class="underline"
+            class="underline transition-colors duration-500 xl:hover:text-dollar focus:text-dollar"
             href="https://github.com/javiercarrasco08"
             target="_blank"
             rel="noopener noreferrer"
             title="Github"
             >Javier Carrasco</a
           >
+          <span id="date"></span>
         </p>
       </footer>
     </div>
