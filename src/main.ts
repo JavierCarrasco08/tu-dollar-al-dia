@@ -45,7 +45,7 @@ $form_convert.addEventListener("submit", async (e) => {
 });
 
 // ! Esta función es utilizada para crear los options
-function createOptions(options: Currencies): Divisas {
+function createOptions(options: Currencies): void {
   let AmericaSur = [
     "ARS",
     "COP",
@@ -57,10 +57,10 @@ function createOptions(options: Currencies): Divisas {
     "PYG",
     "UYU",
   ].sort();
-  let objCodesDivisa: Divisas = {};
+
   for (const [key, value] of Object.entries(options)) {
     if (AmericaSur.includes(key)) {
-      objCodesDivisa[key] = value;
+      objDivisas[key] = value;
     }
   }
 
@@ -78,9 +78,7 @@ function createOptions(options: Currencies): Divisas {
     "Moneda " +
     $select_country.value +
     " - " +
-    objCodesDivisa[$select_country.value];
-
-  return objCodesDivisa;
+    objDivisas[$select_country.value];
 }
 // ! Esta función se utiliza para validar que el formulario no tenga un error.
 function Validation(): void {
@@ -116,7 +114,7 @@ async function getListCountry(api: string) {
     }
 
     let currencies = json.currencies;
-    objDivisas = createOptions(currencies);
+    createOptions(currencies);
   } catch (error: unknown | string) {
     if (typeof error === "string") {
       $error.textContent = error;
