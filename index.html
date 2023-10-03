@@ -69,13 +69,14 @@
             <label
               for="from"
               class="flex flex-col sm:w-3/4 2xl:text-xl 3xl:text-2xl">
-              Moneda a convertir
+              Moneda USD
               <input
                 type="text"
                 name="from"
                 id="from"
-                value="0"
+                placeholder="0"
                 class="bg-transparent border-b-2 border-b-text border-b-solid text-lg outline-none transition-colors duration-500 focus:border-b-blue 2xl:text-2xl 2xl:border-b-4 3xl:text-3xl"
+                autocomplete="off"
                 required />
             </label>
           </div>
@@ -84,7 +85,7 @@
             value="Convertir"
             class="font-semibold bg-blue px-5 py-2 rounded border-transparent border-2 transition-colors duration-500 border-solid focus:border-text outline-none cursor-pointer 2xl:text-xl 3xl:text-3xl" />
           <label for="to" class="flex flex-col w-full 2xl:text-xl 3xl:text-2xl">
-            Moneda USD
+            <span id="moneda" class="inline">Moneda</span>
             <input
               type="text"
               name="to"
@@ -93,6 +94,7 @@
               value="0"
               disabled="disabled" />
           </label>
+          <span id="error"></span>
         </form>
       </main>
       <footer class="flex-grow-0 p-3">
